@@ -1,0 +1,487 @@
+/*
+Colours:
+Light {
+  Dark Blue: 7895B2
+  Light Blue: AEBDCA
+  Dark White: E8DFCA
+  Off White: F5EFE6
+  }
+Dark? {
+}
+ */
+ @import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+    
+}
+
+ /* Common Themes */
+ 
+ * {
+   font-family: "Source Code Pro", monospace;
+   color: #7895b2;
+   font-weight: 1000;
+   background-color: #f5efe6;
+ }
+
+ html {
+   height: 100%;
+ }
+ 
+ body {
+   background-color: #f5efe6;
+   padding: 0px 0px;
+   margin: 0px 0px;
+   display: flex;
+   flex-direction: column;
+   height: 100%;
+ }
+ 
+ main {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   height: 100%;
+ }
+ 
+ h {
+   font-size: xx-large;
+ }
+ 
+ h1 {
+   align-self: center;
+   background-color: #7895b2;
+   color: #f5efe6;
+   padding: 0px 0px;
+   max-width: 120px;
+   margin: 0 0 0 0;
+   margin-left: 10px;
+ }
+ 
+ p {
+   font-size: normal;
+ }
+ 
+ /* Header and Footer Styles */
+ 
+ footer {
+   position: relative;
+   left: 0px;
+   bottom: 0px;
+   margin-top: 10px;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   justify-content: center;
+   align-content: center;
+   background-color: #7895b2;
+   color: #f5efe6;
+   width: 100%;
+   height: 60px;
+ }
+ 
+ header {
+   /* position:sticky; */
+   top: 0;
+   left: 0;
+   display: flex;
+   justify-content: space-between;
+   align-content: center;
+   background-color: #7895b2;
+   color: #f5efe6;
+   padding: 0px 0px;
+   margin-bottom: 0px;
+   margin-top: 0;
+   height: 60px;
+ }
+/* 
+ nav {
+   position: relative;
+   height: 100%;
+   display: flex;
+   background-color: #7895b2;
+ } */
+ 
+ /* nav a {
+   display: flex;
+   align-items: center;
+   height: 100%;
+   background-color: #7895b2;
+   color: #f5efe6;
+   text-decoration: none;
+   padding-left: 3vw;
+   padding-right: 3vw;
+ }
+ 
+ nav a:hover {
+   display: flex;
+   align-items: center;
+   height: 100%;
+   background-color: #f5efe6;
+   color: #7895b2;
+   text-decoration: none;
+ } */
+ 
+ /* Home Styles */
+ main.home {
+   height: 100%;
+ }
+ 
+ p.home {
+   text-align: center;
+ }
+ 
+ /* Account Styles */
+ 
+ main.login {
+   height: 100%;
+   width: 100vw;
+ }
+ 
+ form.register {
+   display: flex;
+   flex-direction: column;
+   flex-wrap: wrap;
+   gap: 10px;
+ }
+ 
+ form.register input {
+   width: 80vw;
+   max-width: 600px;
+   padding: 10px 10px;
+ }
+ 
+ form.register input.button {
+   background-color: #7895b2;
+   color: #f5efe6;
+   font-size: large;
+ }
+ 
+ form.register input.text {
+   background-color: white;
+   color: #7895b2;
+   text-align: center;
+   font-size: large;
+ }
+ 
+ form.register p {
+   font-size: medium;
+   text-align: center;
+   margin: 5px 0px 5px;
+ }
+ 
+ form.login {
+   width: 100vw;
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+ }
+ 
+ form.login input {
+   width: 200px;
+   height: 40px;
+ }
+ 
+ form.login input.text {
+   width: 300px;
+   margin: 10px 10px;
+   background-color: white;
+   text-align: center;
+   font-size: large;
+ }
+ 
+ form.login input.button {
+   margin: 10px 10px;
+   background-color: #7895b2;
+   color: #f5efe6;
+   font-size: large;
+ }
+ 
+ form.login input.register {
+   margin: 50px 10px;
+   background-color: #7895b2;
+   color: #f5efe6;
+   font-size: large;
+ }
+ 
+ /* Cards Styles */
+ 
+ main.cards {
+   width: 100%;
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+   margin-bottom: 10px;
+   padding-top: 10px;
+   margin-top: 10px;
+   overflow: hidden;
+ }
+ 
+ main.cards .cards-menu {
+   display: flex;
+   justify-content: center;
+ }
+ 
+ main.cards .cards-menu form input {
+   border: none;
+ }
+ 
+ main.cards .cards-menu form input:hover {
+   background-color: #7895b2;
+   color: #f5efe6;
+ }
+ 
+ main.cards .add-card form {
+   width: 90vw;
+   display: flex;
+   flex-direction: column;
+ }
+ 
+ main.cards .add-card form input {
+   display: flex;
+   flex-direction: column;
+   text-align: center;
+   height: 40px;
+   font-size: large;
+ }
+ 
+ main.cards .add-card form input.text {
+   background-color: white;
+ }
+ 
+ main.cards .add-card form input.button {
+   border: none;
+   align-self: center;
+   padding-left: 20%;
+   padding-right: 20%;
+   padding-top: 15px;
+   padding-bottom: 15px;
+ }
+ 
+ main.cards .add-card form input.button:hover {
+   border: none;
+   background-color: #7895b2;
+   color: #f5efe6;
+ }
+ 
+ main.cards .cards {
+   height: 100%;
+   margin: 10 10 10 10;
+   border: solid;
+   border-color: #7895b2;
+   border-bottom: none;
+   border-right: none;
+   border-left: none;
+   overflow-y: scroll;
+   overflow-x: hidden;
+   font-size: large;
+   width: 100%;
+ }
+ 
+ .cards-grid {
+   display: grid;
+   grid-template-columns: 1fr 9fr;
+   grid-template-rows: 1;
+   height: auto;
+   width: 100vw;
+ }
+ 
+ .card-and-delete {
+   display: flex;
+   width: 100%;
+   flex-wrap: 1;
+   justify-content: center;
+   align-items: center;
+   margin: 0 0 0 0;
+   padding: 10 10 10 10;
+   overflow-x: hidden;
+   min-width: 0;
+ }
+ 
+ .card-and-delete .card {
+   text-align: center;
+   margin: 10 10 10 10;
+   min-width: 0;
+   border-bottom: solid;
+   border-color: #7895b2;
+ }
+ 
+ .card-and-delete .card p1 {
+   min-width: 0;
+   word-wrap: break-word;
+   font-size: large;
+   line-height: 2;
+ }
+ 
+ .card-and-delete form input {
+   margin: 10 10 10 10;
+   padding: 10 10 10 10;
+   border: none;
+   background-color: #f5efe6;
+   color: #7895b2;
+ }
+ 
+ .card-and-delete form input:hover {
+   margin: 10 10 10 10;
+   padding: 10 10 10 10;
+   border: none;
+   background-color: #7895b2;
+   color: #f5efe6;
+ }
+ 
+ section.cards-side input {
+   height: 15vh;
+   width: 100%;
+   padding: 0px 0px;
+   background-color: #7895b2;
+   color: #f5efe6;
+   border: none;
+   font-size: large;
+ }
+ 
+ section.cards {
+   display: flex;
+   justify-content: center;
+   align-content: center;
+ }
+ 
+ main.study-cards .card p {
+   text-align: center;
+ }
+ 
+ main.study-cards .card form {
+   display: flex;
+   justify-content: center;
+ }
+ 
+ main.study-cards .card form input {
+   width: 200;
+   height: 50;
+   margin: 10px 10px 10px 10px;
+   border: none;
+ }
+ 
+ main.study-cards .card form input:hover {
+   background-color: #7895b2;
+   color: #f5efe6;
+ }
+ /* Decks Styles */
+ 
+ main.decks {
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   margin-top: 10px;
+   margin-bottom: 10px;
+ }
+ 
+ main.decks input {
+   width: 400px;
+   height: 40px;
+   background-color: #f5efe6;
+   color: #7895b2;
+   border: none;
+   text-align: center;
+   font-size: large;
+ }
+ 
+ main.decks {
+   height: 100%;
+   margin: 10 10 10 10;
+   font-size: large;
+   width: 100%;
+   overflow: hidden;
+ }
+ 
+ main.decks .scrollable {
+   height: 100%;
+   overflow-y: scroll;
+   overflow-x: hidden;
+   font-size: large;
+   width: auto;
+   border: solid;
+   border-color: #7895b2;
+   padding: 10 10 10 10;
+   margin-top: 20;
+ }
+ 
+ main.decks input {
+   width: 400px;
+   height: 40px;
+   background-color: #f5efe6;
+   color: #7895b2;
+   border: none;
+   text-align: center;
+   font-size: large;
+ }
+ 
+ main.decks form {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-wrap: wrap;
+ }
+ 
+ main.decks input:hover {
+   width: 400px;
+   height: 40px;
+   background-color: #7895b2;
+   color: #f5efe6;
+ }
+ 
+ main.decks .decks {
+   display: flex;
+   flex-direction: column;
+ }
+ 
+ main.decks form.deck {
+   border: solid;
+   border-color: #7895b2;
+   border-top: none;
+   border-left: none;
+   border-right: none;
+ }
+ 
+ main.decks input.add-button {
+   width: 100px;
+   margin-top: 10px;
+ }
+ 
+ main.decks input.add-text {
+   width: 100%;
+   color: 7895B2;
+   background-color: white;
+ }
+ 
+ /* Error Styles */
+ 
+ main.error {
+   display: flex;
+   flex-direction: column;
+ }
+ 
+ main.error h1 {
+   background-color: #7895b2;
+   color: #f5efe6;
+   margin-bottom: 20px;
+ }
+ 
+ input.error {
+   margin-top: 100px;
+   padding: 20 40 20 40;
+   background-color: #7895b2;
+   color: #f5efe6;
+   font-size: large;
+   border: none;
+ }
+ 
+ input.error:hover {
+   background-color: #f5efe6;
+   color: #7895b2;
+ }
+ 
