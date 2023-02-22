@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CardController;
 use App\Http\Controllers\DeckController;
+use App\Http\Controllers\StudyController;
 use App\Http\Controllers\ProfileController;
 
 /*
@@ -30,6 +31,11 @@ Route::resource('decks', DeckController::class)->middleware(['auth']);
 
 // Cards
 Route::resource('decks.cards', CardController::class)->middleware(['auth']);
+
+// Study
+Route::get('study/prime/{deck}', [StudyController::class, 'prime'])->name('study.prime');
+Route::get('study/initialize/{deck}', [StudyController::class, 'initialize'])->name('study.initialize');
+Route::get('study/show/{deck}', [StudyController::class, 'show'])->name('study.show');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

@@ -6,18 +6,19 @@
     </x-slot>
 
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 flex flex-col justify-center">
 
             <form action="{{ route('decks.store') }}" method="post">
                 @csrf
                 <x-text-input type="text" name="name" field="name" placeholder="Name"></x-text-input>
-                <x-primary-button type="submit" value="Create">Add</x-primary-button>
-                
+                <x-primary-button class="bg-green-500" type="submit" value="Create">Add</x-primary-button>
                 @error('name')
                     <div class="text-red-600">{{ $message }}</div>
                 @enderror
-
             </form>
+
+            <a class="text-center" href="{{ route('decks.index') }}"><x-primary-button type="submit" value="Create">Back</x-primary-button></a>
+
         </div>
     </div>
 </x-app-layout>
