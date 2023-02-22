@@ -16,7 +16,7 @@
 
                 @csrf
                 <x-text-input type="text" name="name" field="name" placeholder="Name"></x-text-input>
-                <x-primary-button type="submit">Update</x-primary-button>
+                <x-new-button type="submit">Update</x-new-button>
                 
                 @error('name')
                     <div class="text-red-600">{{ $message }}</div>

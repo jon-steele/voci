@@ -485,3 +485,7 @@ Dark? {
    color: #7895b2;
  }
  
+ input:checked ~ .dot {
+  transform: translateX(100%);
+  background-color: #7895b2;
+}

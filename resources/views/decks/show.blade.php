@@ -51,7 +51,7 @@
                         @error('back')
                             <div class="text-red-600">{{ $message }}</div>
                         @enderror   
-                    <x-primary-button type="submit" class="m-4">Add</x-primary-button>
+                    <x-new-button type="submit" class="m-4">Add</x-new-button>
 
                 </form>
             </div>
