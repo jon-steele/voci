@@ -27,7 +27,7 @@
                         <form action="{{ route('decks.cards.destroy', ['deck' => $deck->uuid, 'card' => $card->uuid]) }}" method="post" class="ml-3 flex justify-center">
                             @method('delete')
                             @csrf
-                            <x-primary-button type="submit" class="bg-red-500 mt-4">Delete</x-primary-button>
+                            <x-red-button type="submit" class="mt-4">Delete</x-red-button>
                         </form>
                     </div>
 

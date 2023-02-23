@@ -1,4 +1,16 @@
 <x-app-layout>
+{{-- 
+    <script>
+        function getLocalStream() {
+            navigator.mediaDevices.getUserMedia({ video: false, audio: true }).then((stream) => {
+                window.localStream = stream; // A
+                window.localAudio.srcObject = stream; // B
+                window.localAudio.autoplay = true; // C
+            }).catch((err) => {
+            console.error(`you got an error: ${err}`);
+            });
+        }
+    </script> --}}
 
     <div class="w-full flex content-center justify-center m-8">
         <div class="flex flex-col">

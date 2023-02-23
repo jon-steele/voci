@@ -11,13 +11,13 @@
             <form action="{{ route('decks.store') }}" method="post">
                 @csrf
                 <x-text-input type="text" name="name" field="name" placeholder="Name"></x-text-input>
-                <x-primary-button class="bg-green-500" type="submit" value="Create">Add</x-primary-button>
+                <x-new-button type="submit" value="Create">Add</x-new-button>
                 @error('name')
                     <div class="text-red-600">{{ $message }}</div>
                 @enderror
             </form>
 
-            <a class="text-center" href="{{ route('decks.index') }}"><x-primary-button type="submit" value="Create">Back</x-primary-button></a>
+            <a class="text-center m-8" href="{{ route('decks.index') }}"><x-primary-button type="submit" value="Create">Back</x-primary-button></a>
 
         </div>
     </div>

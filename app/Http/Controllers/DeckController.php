@@ -18,7 +18,7 @@ class DeckController extends Controller
      */
     public function index()
     {
-        $decks = Deck::where('user_id', Auth::id())->latest()->paginate(10);
+        $decks = Deck::where('user_id', Auth::id())->latest()->paginate(8);
 
         // Show the decks index, pass through our decks
         return view('decks.index')->with('decks', $decks);
