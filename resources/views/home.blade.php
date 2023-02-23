@@ -11,7 +11,7 @@
         <main class="w-screen">
             <h1 class="text-5xl w-screen">voci.</h1>
             <br>
-            <p>(voice operated card interface)</p>
+            <p>(Voice Operated flashCard Interface)</p>
             <br>
         </main>
 

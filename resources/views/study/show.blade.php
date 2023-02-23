@@ -24,47 +24,5 @@
         @endif
     </div>
 
-    <script>
-        if ('webkitSpeechRecognition' in window) {
-        var recognition = new webkitSpeechRecognition();
-        recognition.continuous = true;
-        recognition.interimResults = true;
-        recognition.lang = 'en-US';
-
-        recognition.onstart = function() {
-            console.log('Speech recognition started.');
-        };
-
-        recognition.onend = function() {
-            console.log('Speech recognition ended.');
-            recognition.start();
-        };
-
-        recognition.onresult = function(event) {
-            var interim_transcript = '';
-            var final_transcript = '';
-
-            for (var i = event.resultIndex; i < event.results.length; ++i) {
-            if (event.results[i].isFinal) {
-                final_transcript += event.results[i][0].transcript;
-            } else {
-                interim_transcript += event.results[i][0].transcript;
-            }
-            }
-
-            if (final_transcript !== '') {
-            console.log('Final transcript: ' + final_transcript);
-            }
-
-            if (interim_transcript !== '') {
-            console.log('Interim transcript: ' + interim_transcript);
-            }
-        };
-
-        recognition.start();
-        } else {
-        console.warn('Webkit Speech Recognition API is not supported.');
-        }
-    </script>
-
+    <script type="text/javascript" src="{{ asset('js/speech_recognition_show.js') }}"></script>
 </x-app-layout>
