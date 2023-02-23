@@ -9,7 +9,7 @@
         @vite('resources/js/app.js')
     </head>
     <body>
-        <div class="h-16 m-0">
+        <div class="h-16 m-0 antialiased">
             {{-- Nav Bar --}}
             @include('layouts.navigation')
 

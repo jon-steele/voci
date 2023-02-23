@@ -5,7 +5,7 @@
             <a class="m-4 mt-4 mb-4 rounded-md" href="{{ route('decks.create') }}"><x-new-button>New Deck</x-new-button></a>
         </div>
 
-        <div class="m-4 border-primary border-4 rounded-md flex flex-col justify-center w-min-content">
+        <div class="m-4 border-primary border-4 rounded-md flex flex-col justify-center w-screen md:w-min-content">
 
             @forelse ($decks as $deck)
 
@@ -15,7 +15,7 @@
                 </a>
 
                 <a class="m-4" href="{{ route('decks.show', $deck) }}">
-                    <x-primary-button class="w-full">{{ $deck->name }}</x-primary-button>
+                    <x-primary-button class="w-full break-all">{{ $deck->name }}</x-primary-button>
                 </a>
             </div>
 

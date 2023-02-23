@@ -9,7 +9,7 @@
     <body class="h-screen">
 
         <main class="w-screen">
-            <h1 class="text-5xl w-screen">voci.</h1>
+            <h1 class="text-5xl w-screen bg-secondary text-primary">voci.</h1>
             <br>
             <p>(Voice Operated flashCard Interface)</p>
             <br>

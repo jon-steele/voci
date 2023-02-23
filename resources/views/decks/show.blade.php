@@ -15,15 +15,15 @@
             </div>
 
             <div class="m-4 text-center">
-                <h2 class="font-bold text-2xl">{{ $deck->name }}</h2>
+                <h2 class="font-bold text-2xl break-all">{{ $deck->name }}</h2>
             </div>
 
             <div class="m-4 border-primary border-4 rounded-md flex flex-col justify-center">
 
                 @forelse ($cards as $card)
                     <div class="m-4">
-                        <p class="text-center">{{ $card->front }}</p>
-                        <p class="text-center">{{ $card->back }}</p>
+                        <p class="text-center break-all">{{ $card->front }}</p>
+                        <p class="text-center break-all">{{ $card->back }}</p>
                         <form action="{{ route('decks.cards.destroy', ['deck' => $deck->uuid, 'card' => $card->uuid]) }}" method="post" class="ml-3 flex justify-center">
                             @method('delete')
                             @csrf
@@ -39,19 +39,19 @@
                 {{  $cards->links() }}
             </div>
 
-            <div class="my-6 p-4 bg-secondary border-primary border-4 rounded-lg">
+            <div class="my-6 p-4 bg-secondary ">
                 <form action="{{ route('decks.cards.store', $deck->uuid) }}" method="post" class="flex flex-col justify-center">
                     @csrf
                     <input type="hidden" name="deck_id" value="{{ $deck->deck_id }}">
-                    <textarea rows="6" class="rounded-md m-2 p-4 text-gray-700 border-none text-center" field='front' name="front" placeholder="Front"></textarea>
+                    <textarea tabindex="1" rows="6" class="rounded-md m-2 p-4 text-gray-700 border-none text-center" field='front' name="front" placeholder="Front"></textarea>
                         @error('front')
                             <div class="text-red-600">{{ $message }}</div>
                         @enderror
-                    <textarea rows="6" class="rounded-md m-2 p-4 text-gray-700 border-none text-center" field="back" name="back" placeholder="Back"></textarea>
+                    <textarea tabindex="2" rows="6" class="rounded-md m-2 p-4 text-gray-700 border-none text-center" field="back" name="back" placeholder="Back"></textarea>
                         @error('back')
                             <div class="text-red-600">{{ $message }}</div>
                         @enderror   
-                    <x-new-button type="submit" class="m-4">Add</x-new-button>
+                    <x-new-button tabindex="3" type="submit" class="m-4">Add</x-new-button>
 
                 </form>
             </div>
