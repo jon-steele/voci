@@ -1,14 +1,24 @@
 <x-app-layout>
     <div id="deck_uuid" style="display: none">{{ $deck->uuid; }}</div>
-    <div class="h-screen flex flex-col justify-center items-center content-center">
-        <p id="read" class="font-qs text-3xl">Out of cards.</p>
+        <div class="h-screen flex flex-col justify-center items-center content-center">
+            
+            {{-- Out of cards. --}}
+            <p id="read" class="font-qs text-3xl">Out of cards.</p>
 
-        <form class="m-8" action="{{ route('study.initialize', $deck) }}" method="get">
-            <input type="hidden" name="mode" value="{{ (session('voice') == "true") ? "on" : "" }}">
-            <x-primary-button>Reshuffle</x-primary-button>
-        </form>
-        <a href="{{ route('decks.index') }}"><x-primary-button>Decks</x-primary-button></a>
-    </div>
+            {{-- Reshuffle Button --}}
+            <form class="m-8" action="{{ route('study.initialize', $deck) }}" method="get">
+                <input type="hidden" name="mode" value="{{ (session('voice') == "true") ? "on" : "" }}">
+                <x-primary-button>Reshuffle</x-primary-button>
+            </form>
+
+            {{-- Decks Button --}}
+            <a href="{{ route('decks.index') }}"><x-primary-button>Decks</x-primary-button></a>
+
+        </div>
+
+    {{-- ****************************************** --}}
+    {{--              VOICE CONTROLLER              --}}
+    {{-- ****************************************** --}}
 
     @if (session('voice') == "true")
         {{-- Passing php parameters into JS --}}
@@ -19,4 +29,5 @@
         {{-- Speech Recognition Script --}}
         <script type="text/javascript" src="{{ asset('js/speech_controller_end.js') }}"></script>
     @endif
+
 </x-app-layout>

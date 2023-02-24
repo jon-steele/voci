@@ -17,9 +17,13 @@
         {{-- Flip Button --}}
         <a href="{{ route('study.show', $deck) }}"><x-primary-button>Next</x-primary-button></a>
 
+
+        {{-- ****************************************** --}}
+        {{--              VOICE CONTROLLER              --}}
+        {{-- ****************************************** --}}
+
         @if (session('voice') == "true")
             {{-- Passing voice rate from php into JS --}}
-
             <div id="rate" style="display: none">{{ session('rate'); }}</div>
             <div id="voice" style="display: none">{{ session('voice'); }}</div>
             {{-- Text To Speech Script --}}
@@ -27,5 +31,6 @@
             {{-- Speech Recognition Script --}}
             <script type="text/javascript" src="{{ asset('js/speech_controller.js') }}"></script>
         @endif
+
     </div>
 </x-app-layout>
