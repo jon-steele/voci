@@ -1,5 +1,17 @@
 <x-app-layout>
 
+    <script defer>
+
+        setTimeout(() => {
+            let speech = new SpeechSynthesisUtterance();
+            let voices = [];
+            const voicesDropdown = document.querySelector('[name="voice"]');
+            voices = speechSynthesis.getVoices();
+            voicesDropdown.innerHTML = voices.map(voice => `<option value="${voice.name}">${voice.name} (${voice.lang})</option>`).join('');
+        }, 50);
+
+    </script>
+
     <script defer type="text/javascript" src="{{ asset('js/stop_speech.js') }}"></script>
 
     <div class="w-full flex content-center justify-center m-8">
@@ -27,6 +39,12 @@
 
                 <label>Voice Speed</label>
                 <input type="range" min="0.7" max="1.3" step="0.01" value="1.0" id="rate" name="rate" class="w-full h-2 bg-gray-400 rounded-lg appearance-none cursor-pointer mb-12 slider">
+
+                <label>Select Voice</label>
+                <select name="voice" id="voices">
+                    <option value=""></option>
+                </select>
+
 
                 <x-primary-button class="bg-green-500">Begin</x-primary-button>
             </form>

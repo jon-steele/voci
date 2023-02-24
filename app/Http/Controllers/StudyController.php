@@ -37,6 +37,10 @@ class StudyController extends Controller
         // Setting the rate of the voice, if set
         if (($request->input('rate')) != null)
             session(['rate' => $request->input('rate')]);
+        
+        // Setting the voice, if set
+        if (($request->input('voice')) != null)
+            session(['voice' => $request->input('voice')]);
 
         // Determining whether the user wants voice mode or not.
         if ($mode == "on"){
