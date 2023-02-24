@@ -22,7 +22,7 @@
             {{-- Text To Speech Script --}}
             <script src="{{ asset('js/text_to_speech.js') }}"></script>
             {{-- Speech Recognition Script --}}
-            <script type="text/javascript" src="{{ asset('js/speech_recognition_show.js') }}"></script>
+            <script type="text/javascript" src="{{ asset('js/speech_controller.js') }}"></script>
         @endif
     </div>
 </x-app-layout>

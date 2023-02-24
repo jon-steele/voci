@@ -9,18 +9,19 @@ if ('webkitSpeechRecognition' in window) {
     };
 
     recognition.onresult = function(event) {
-        var interim_transcript = '';
         var final_transcript = '';
 
         for (var i = event.resultIndex; i < event.results.length; ++i) {
             if (event.results[i].isFinal) {
                 final_transcript += event.results[i][0].transcript;
-            } else {
-                interim_transcript += event.results[i][0].transcript;
             }
         }
 
-        if (final_transcript.includes("reshuffle") || interim_transcript.includes("reshuffle")){
+    // *********************************************************************************
+    //                                      COMMANDS
+    // *********************************************************************************
+
+        if (final_transcript.includes("reshuffle")){
             let deck_uuid = document.getElementById("deck_uuid").textContent;
             console.log('reshuffle');
             
@@ -31,7 +32,7 @@ if ('webkitSpeechRecognition' in window) {
             window.location.href = rootUrl + '/study/initialize/' + deck_uuid;
 
         }
-        else if (final_transcript.includes("again") || interim_transcript.includes("again")){
+        else if (final_transcript.includes("again")){
             let deck_uuid = document.getElementById("deck_uuid").textContent;
             console.log('again');
 
@@ -41,7 +42,7 @@ if ('webkitSpeechRecognition' in window) {
             // Navigate to the root directory
             window.location.href = rootUrl + '/study/initialize/' + deck_uuid;
         }
-        else if (final_transcript.includes("decks") || interim_transcript.includes("decks")){
+        else if (final_transcript.includes("decks")){
             console.log('decks');
 
             // Get the root URL
@@ -50,6 +51,12 @@ if ('webkitSpeechRecognition' in window) {
             // Navigate to the root directory
             window.location.href = rootUrl + '/decks/';
         }
+        else if (final_transcript.includes("repeat") || 
+                final_transcript.includes("recite")){
+
+            // Run text to speech script
+            speechSynthesis.speak(utterance);
+    }
     };
 
     recognition.start();
