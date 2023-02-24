@@ -16,27 +16,13 @@
         @endif
 
         @if (session('voice') == "true")
-
             {{-- Passing voice rate from php into JS --}}
             <div id="rate" style="display: none">{{ session('rate'); }}</div>
-            
+            <div id="voice" style="display: none">{{ session('voice'); }}</div>
             {{-- Text To Speech Script --}}
-            <script>
-
-                // Acquiring parameters from php
-                let read = document.getElementById("read").textContent;
-                let rate = document.getElementById("rate").textContent;
-
-                // Setting up the utterance
-                let utterance = new SpeechSynthesisUtterance(read);
-                utterance.voice = window.speechSynthesis.getVoices()[4];
-                utterance.rate = rate;
-
-                // Activating the utterance
-                speechSynthesis.speak(utterance);
-            </script>
+            <script src="{{ asset('js/text_to_speech.js') }}"></script>
+            {{-- Speech Recognition Script --}}
+            <script type="text/javascript" src="{{ asset('js/speech_recognition_show.js') }}"></script>
         @endif
     </div>
-
-    <script type="text/javascript" src="{{ asset('js/speech_recognition_show.js') }}"></script>
 </x-app-layout>
