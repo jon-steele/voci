@@ -1,3 +1,6 @@
+// This script is used in the study/end view
+// It handles all of the speech recognition for that page.
+
 if ('webkitSpeechRecognition' in window) {
     var recognition = new webkitSpeechRecognition();
     recognition.continuous = true;
