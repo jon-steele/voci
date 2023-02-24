@@ -29,7 +29,7 @@
 
                 // Setting up the utterance
                 let utterance = new SpeechSynthesisUtterance(read);
-                utterance.voice = window.speechSynthesis.getVoices()[3];
+                utterance.voice = window.speechSynthesis.getVoices()[4];
                 utterance.rate = rate;
 
                 // Activating the utterance

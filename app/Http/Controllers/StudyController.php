@@ -33,14 +33,17 @@ class StudyController extends Controller
         }
         
         $mode = $request->input('mode');
-        session(['rate' => $request->input('rate')]);
+
+        // Setting the rate of the voice, if set
+        if (($request->input('rate')) != null)
+            session(['rate' => $request->input('rate')]);
 
         // Determining whether the user wants voice mode or not.
         if ($mode == "on"){
             session(['voice' => "true"]);
         }
 
-        // Obtain array of cards to study
+        // Obtaining the array of cards to study
         $cards = (DB::table('cards')->select('front', 'back')->where('deck_id', $deck->deck_id)->get())->toArray();
         shuffle($cards);
 
@@ -53,7 +56,11 @@ class StudyController extends Controller
     }
 
     public function show(Deck $deck){
+        
+        // Stop voice 
+        echo '<script> speechSynthesis.cancel(); </script>';
 
+        // Check if user is authenticated
         if($deck->user_id != Auth::id()){
             return abort(403);
         }
