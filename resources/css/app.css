@@ -9,7 +9,7 @@ Light {
 Dark? {
 }
  */
- @import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap");
+ @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -23,69 +23,9 @@ Dark? {
  
  * {
    font-family: "Source Code Pro", monospace;
-   color: #7895b2;
-   font-weight: 1000;
-   background-color: #f5efe6;
- }
-
- html {
-   height: 100%;
- }
- 
- body {
-   background-color: #f5efe6;
-   padding: 0px 0px;
-   margin: 0px 0px;
-   display: flex;
-   flex-direction: column;
-   height: 100%;
- }
- 
- main {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   justify-content: center;
-   height: 100%;
- }
- 
- h {
-   font-size: xx-large;
- }
- 
- h1 {
-   align-self: center;
-   background-color: #7895b2;
-   color: #f5efe6;
-   padding: 0px 0px;
-   max-width: 120px;
-   margin: 0 0 0 0;
-   margin-left: 10px;
- }
- 
- p {
-   font-size: normal;
- }
- 
- /* Header and Footer Styles */
- 
- header {
-   /* position:sticky; */
-   top: 0;
-   left: 0;
-   display: flex;
-   justify-content: space-between;
-   align-content: center;
-   background-color: #7895b2;
-   color: #f5efe6;
-   padding: 0px 0px;
-   margin-bottom: 0px;
-   margin-top: 0;
-   height: 60px;
  }
  
  /* Checkbox Style */
-
  input:checked ~ .dot {
   transform: translateX(100%);
   background-color: #7895b2;

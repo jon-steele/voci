@@ -11,12 +11,16 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Source Code Pro', ...defaultTheme.fontFamily.sans]
+                'source': ['Source Code Pro'],
+                'qs': ['Quicksand']
             },
             colors: {
                 primary: '#7895B2',
+                lightblue: '#AEBDCA',
                 secondary: '#F5EFE6',
-                darkprimary: '#435c75'
+                darkwhite: '#E8DFCA'
+                // secondary: '#F5EFE6',
+                // darkprimary: '#435c75'
             }
         },
     },

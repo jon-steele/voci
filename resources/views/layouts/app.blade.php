@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,15 +9,16 @@
         @vite('resources/css/app.css')
         @vite('resources/js/app.js')
     </head>
-    <body>
-        <div class="h-16 m-0 antialiased">
-            {{-- Nav Bar --}}
-            @include('layouts.navigation')
 
-            <!-- Page Content -->
-            <main class="h-max">
-                {{ $slot }}
-            </main>
-        </div>
+    <body class="bg-secondary text-primary">
+
+        {{-- Nav Bar --}}
+        @include('layouts.navigation')
+
+        <!-- Page Content -->
+        <main class="w-screen flex flex-col justify-center items-center">
+            {{ $slot }}
+        </main>
+
     </body>
 </html>
