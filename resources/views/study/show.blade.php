@@ -16,9 +16,23 @@
         @endif
 
         @if (session('voice') == "true")
+
+            {{-- Passing voice rate from php into JS --}}
+            <div id="rate" style="display: none">{{ session('rate'); }}</div>
+            
+            {{-- Text To Speech Script --}}
             <script>
+
+                // Acquiring parameters from php
                 let read = document.getElementById("read").textContent;
+                let rate = document.getElementById("rate").textContent;
+
+                // Setting up the utterance
                 let utterance = new SpeechSynthesisUtterance(read);
+                utterance.voice = speechSynthesis.getVoices().find((voice) => voice.name === "Google UK English Female");
+                utterance.rate = rate;
+
+                // Activating the utterance
                 speechSynthesis.speak(utterance);
             </script>
         @endif

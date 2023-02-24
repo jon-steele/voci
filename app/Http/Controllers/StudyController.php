@@ -33,6 +33,7 @@ class StudyController extends Controller
         }
         
         $mode = $request->input('mode');
+        session(['rate' => $request->input('rate')]);
 
         // Determining whether the user wants voice mode or not.
         if ($mode == "on"){
