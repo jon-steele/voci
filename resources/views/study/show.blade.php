@@ -29,7 +29,7 @@
 
                 // Setting up the utterance
                 let utterance = new SpeechSynthesisUtterance(read);
-                utterance.voice = speechSynthesis.getVoices().find((voice) => voice.name === "Google UK English Female");
+                utterance.voice = window.speechSynthesis.getVoices()[3];
                 utterance.rate = rate;
 
                 // Activating the utterance

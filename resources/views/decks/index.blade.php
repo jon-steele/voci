@@ -1,3 +1,4 @@
+<script defer type="text/javascript" src="{{ asset('js/stop_speech.js') }}"></script>
 <x-app-layout>
     <div class="mt-8">
         <div class="flex justify-center w-full">

@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>voci</title>
+        <script defer type="text/javascript" src="{{ asset('js/stop_speech.js') }}"></script>
         @vite('resources/css/app.css')
     </head>
     <body class="h-screen">

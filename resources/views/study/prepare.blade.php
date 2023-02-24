@@ -1,5 +1,7 @@
 <x-app-layout>
 
+    <script defer type="text/javascript" src="{{ asset('js/stop_speech.js') }}"></script>
+
     <div class="w-full flex content-center justify-center m-8">
         <div class="flex flex-col">
 
@@ -24,7 +26,7 @@
                 </div>
 
                 <label>Voice Speed</label>
-                <input type="range" min="0.5" max="1.6" step="0.1" value="1.0" id="rate" name="rate" class="w-full h-2 bg-gray-400 rounded-lg appearance-none cursor-pointer mb-12 slider">
+                <input type="range" min="0.7" max="1.3" step="0.01" value="1.0" id="rate" name="rate" class="w-full h-2 bg-gray-400 rounded-lg appearance-none cursor-pointer mb-12 slider">
 
                 <x-primary-button class="bg-green-500">Begin</x-primary-button>
             </form>

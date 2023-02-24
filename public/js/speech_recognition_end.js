@@ -42,8 +42,7 @@ if ('webkitSpeechRecognition' in window) {
             window.location.href = rootUrl + '/study/initialize/' + deck_uuid;
         }
         else if (final_transcript.includes("decks") || interim_transcript.includes("decks")){
-            let deck_uuid = document.getElementById("deck_uuid").textContent;
-            console.log('again');
+            console.log('decks');
 
             // Get the root URL
             var rootUrl = window.location.origin;

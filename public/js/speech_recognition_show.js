@@ -22,20 +22,38 @@ recognition.onresult = function(event) {
         }
     }
 
-    if (final_transcript.includes("flip") || interim_transcript.includes("flip")){
-        console.log('flip');
-        // Refresh the page
-        window.location.href = currentUrl;
-    }
-    else if (final_transcript.includes("next") || interim_transcript.includes("next")){
-        // Refresh the page
-        window.location.href = currentUrl;
-        console.log('next');
-    }
-    else if (final_transcript.includes("skip") || interim_transcript.includes("skip")){
-        // Refresh the page
+    if (final_transcript.includes("flip") || interim_transcript.includes("flip") ||
+        final_transcript.includes("next") || interim_transcript.includes("next") ||
+        final_transcript.includes("skip") || interim_transcript.includes("skip"))
+        {
         window.location.href = currentUrl;
         console.log('skip');
+    }
+    else if (final_transcript.includes("stop") || interim_transcript.includes("stop")){
+        if (speechSynthesis.speaking) {
+            speechSynthesis.cancel();
+    
+            // Make sure we don't create more than one timeout...
+            if (sayTimeout !== null)
+                clearTimeout(sayTimeout);
+    
+            sayTimeout = setTimeout(function () { say(text); }, 250);
+        }
+        console.log('stop');
+    }
+    else if (final_transcript.includes("end") || interim_transcript.includes("end") || 
+        final_transcript.includes("decks") || interim_transcript.includes("decks") || 
+        final_transcript.includes("home") || interim_transcript.includes("home"))
+        {
+        
+        console.log('end');
+
+        // Get the root URL
+        var rootUrl = window.location.origin;
+        console.log(rootUrl);
+
+        // Navigate to the root directory
+        window.location.href = rootUrl + '/decks/';
     }
 };
 
