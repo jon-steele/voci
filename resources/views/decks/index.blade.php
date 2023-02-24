@@ -9,7 +9,7 @@
         </div>
 
         {{-- Decks Div --}}
-        <div class="border-primary border-4 rounded-md flex flex-col justify-center my-4 py-4 px-2 md:px-4 w-full">
+        <div class="rounded-md flex flex-col justify-center my-4 py-4 px-2 md:px-4 w-full">
 
             @forelse ($decks as $deck)
 

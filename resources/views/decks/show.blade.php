@@ -18,7 +18,7 @@
         </div>
 
         {{-- Cards Div --}}
-        <div class="mb-8 p-4 border-primary border-4 rounded-md flex flex-col justify-center w-full md:w-10/12 xl:w-2/3">
+        <div class="mb-8 p-4 rounded-md flex flex-col justify-center w-full md:w-10/12 xl:w-2/3">
 
             @forelse ($cards as $card)
 
