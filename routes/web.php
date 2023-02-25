@@ -17,13 +17,10 @@ use App\Http\Controllers\ProfileController;
 |
 */
 
+// Home
 Route::get('/', function () {
     return view('home');
 })->name('home');
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
 // Decks
 // Route::get('decks/{deck}', 'DecksController@show')->name('decks.show');
@@ -37,6 +34,7 @@ Route::get('study/prime/{deck}', [StudyController::class, 'prime'])->name('study
 Route::get('study/initialize/{deck}', [StudyController::class, 'initialize'])->name('study.initialize')->middleware(['auth', 'verified']);
 Route::get('study/show/{deck}', [StudyController::class, 'show'])->name('study.show')->middleware(['auth', 'verified']);
 
+// Authentication
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
