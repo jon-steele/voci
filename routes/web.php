@@ -27,15 +27,15 @@ Route::get('/dashboard', function () {
 
 // Decks
 // Route::get('decks/{deck}', 'DecksController@show')->name('decks.show');
-Route::resource('decks', DeckController::class)->middleware(['auth']);
+Route::resource('decks', DeckController::class)->middleware(['auth', 'verified']);
 
 // Cards
-Route::resource('decks.cards', CardController::class)->middleware(['auth']);
+Route::resource('decks.cards', CardController::class)->middleware(['auth', 'verified']);
 
 // Study
-Route::get('study/prime/{deck}', [StudyController::class, 'prime'])->name('study.prime');
-Route::get('study/initialize/{deck}', [StudyController::class, 'initialize'])->name('study.initialize');
-Route::get('study/show/{deck}', [StudyController::class, 'show'])->name('study.show');
+Route::get('study/prime/{deck}', [StudyController::class, 'prime'])->name('study.prime')->middleware(['auth', 'verified']);
+Route::get('study/initialize/{deck}', [StudyController::class, 'initialize'])->name('study.initialize')->middleware(['auth', 'verified']);
+Route::get('study/show/{deck}', [StudyController::class, 'show'])->name('study.show')->middleware(['auth', 'verified']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
