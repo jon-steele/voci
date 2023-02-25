@@ -27,7 +27,7 @@
         {{-- Text To Speech Script --}}
         <script src="{{ asset('js/text_to_speech.js') }}"></script>
         {{-- Speech Recognition Script --}}
-        <script type="text/javascript" src="{{ asset('js/study_end_speech_controller_end.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/controllers/study_end_speech_controller.js') }}"></script>
     @endif
 
 </x-app-layout>

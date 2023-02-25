@@ -29,7 +29,7 @@
             {{-- Text To Speech Script --}}
             <script src="{{ asset('js/text_to_speech.js') }}"></script>
             {{-- Speech Recognition Script --}}
-            <script type="text/javascript" src="{{ asset('js/study_speech_controller.js') }}"></script>
+            <script type="text/javascript" src="{{ asset('js/controllers/study_speech_controller.js') }}"></script>
         @endif
 
     </div>

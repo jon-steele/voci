@@ -31,8 +31,6 @@ class StudyController extends Controller
         if($deck->user_id != Auth::id()){
             return abort(403);
         }
-        
-        $mode = $request->input('mode');
 
         // Setting the rate of the voice, if set
         if (($request->input('rate')) != null)
@@ -43,7 +41,9 @@ class StudyController extends Controller
             session(['voice_style' => $request->input('voice_style')]);
 
         // Determining whether the user wants voice mode or not.
-        if ($mode == "on"){
+        if ($request->input('mode') == "off"){
+            session(['voice' => "false"]);
+        } else {
             session(['voice' => "true"]);
         }
 

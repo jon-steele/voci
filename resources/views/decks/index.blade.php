@@ -16,7 +16,9 @@
             {{-- Decks Styling --}}
             <div class="flex flex-col rounded-md mx-2 my-4 md:m-4 p-4 md:p-4 shadow-lg shadow-gray-300 outline-white outline-1 outline">
 
-                <div class="w-full"><h1 class="text-primary text-center font-qs font-semibold bg-transparent mx-4 text-2xl">{{ $deck->name }}</h1></div>
+                {{-- Deck name & Deck uuid set --}}
+                <div id="deck_name" class="w-full"><h1 class="text-primary text-center font-qs font-semibold bg-transparent mx-4 text-2xl">{{ $deck->name }}</h1></div>
+                <div id="deck_uuid" style="display: none"><p>{{ $deck->uuid }}</p></div>
 
                 <div class="flex">
                     <a class="m-2 md:m-4 w-2/3 md:w-1/2" href="{{ route('study.prime', $deck) }}">
@@ -34,4 +36,5 @@
             {{  $decks->links() }}
         </div>
     </div>
+    <script type="text/javascript" src="{{ asset('js/controllers/decks_speech_controller.js') }}"></script>
 </x-app-layout>
