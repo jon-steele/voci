@@ -1,8 +1,8 @@
 <x-app-layout>
-    <div class="h-screen flex flex-col justify-center items-center content-center">
+    <div class="m-auto h-screen flex flex-col justify-center items-center content-center">
 
         {{-- Card Div --}}
-        <div class="text-center rounded-md mb-8 p-4 flex flex-col justify-center w-full md:w-10/12 xl:w-2/3 shadow-lg">
+        <div class="text-center rounded-md m-4 mb-8 p-4 flex flex-col justify-center w-full md:w-10/12 xl:w-2/3 shadow-lg">
 
             @if (session('side') == 0)
                 <p id="read" class="m-8 break-word font-qs text-3xl">{{ $cards[$index]->front; }}</p>
