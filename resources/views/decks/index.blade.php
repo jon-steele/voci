@@ -19,10 +19,10 @@
                 <div class="w-full"><h1 class="text-primary text-center font-qs font-semibold bg-transparent mx-4 text-2xl">{{ $deck->name }}</h1></div>
 
                 <div class="flex">
-                    <a class="m-2 md:m-4 w-1/3 md:w-1/2" href="{{ route('study.prime', $deck) }}">
+                    <a class="m-2 md:m-4 w-2/3 md:w-1/2" href="{{ route('study.prime', $deck) }}">
                         <x-primary-button class="w-full break-word">Study</x-primary-button>
                     </a>
-                    <a class="m-2 md:m-4 w-2/3 md:w-1/2" href="{{ route('decks.show', $deck) }}">
+                    <a class="m-2 md:m-4 w-1/3 md:w-1/2" href="{{ route('decks.show', $deck) }}">
                         <x-primary-button class="w-full break-word">Edit</x-primary-button>
                     </a>
                 </div>

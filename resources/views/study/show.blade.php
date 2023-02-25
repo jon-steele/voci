@@ -2,7 +2,7 @@
     <div class="h-screen flex flex-col justify-center items-center content-center">
 
         {{-- Card Div --}}
-        <div class="rounded-md mb-8 p-4 rounded-md flex flex-col justify-center w-full md:w-10/12 xl:w-2/3 shadow-lg">
+        <div class="text-center rounded-md mb-8 p-4 flex flex-col justify-center w-full md:w-10/12 xl:w-2/3 shadow-lg">
 
             @if (session('side') == 0)
                 <p id="read" class="m-8 break-word font-qs text-3xl">{{ $cards[$index]->front; }}</p>
@@ -29,7 +29,7 @@
             {{-- Text To Speech Script --}}
             <script src="{{ asset('js/text_to_speech.js') }}"></script>
             {{-- Speech Recognition Script --}}
-            <script type="text/javascript" src="{{ asset('js/speech_controller.js') }}"></script>
+            <script type="text/javascript" src="{{ asset('js/study_speech_controller.js') }}"></script>
         @endif
 
     </div>
