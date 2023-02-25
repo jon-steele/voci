@@ -30,19 +30,22 @@ class StudyController extends Controller
             return abort(403);
         }
 
-        // Setting the rate of the voice, if set
+        // Setting the rate of the voice, defaults to 1
         if (($request->input('rate')) != null)
             session(['rate' => $request->input('rate')]);
+        else
+            session(['rate' => 1]);
 
         // Setting the voice, if set
         if (($request->input('voice_style')) != null)
             session(['voice_style' => $request->input('voice_style')]);
 
         // Determining whether the user wants voice mode or not.
-        session(['voice' => "true"]);
-        if ($request->input('mode') == "off"){
+
+        if ($request->input('mode') == "off")
             session(['voice' => "false"]);
-        }
+        else
+            session(['voice' => "true"]);
 
         // Obtaining the array of cards to study
         $cards = (DB::table('cards')->select('front', 'back')->where('deck_id', $deck->deck_id)->get())->toArray();
