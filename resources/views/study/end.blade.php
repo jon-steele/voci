@@ -23,7 +23,7 @@
     @if (session('voice') == "true")
         {{-- Passing php parameters into JS --}}
         <div id="rate" style="display: none">{{ session('rate'); }}</div>
-        <div id="voice" style="display: none">{{ session('voice'); }}</div>
+        <div id="voice_style" style="display: none">{{ session('voice_style'); }}</div>
         {{-- Text To Speech Script --}}
         <script src="{{ asset('js/text_to_speech.js') }}"></script>
         {{-- Speech Recognition Script --}}

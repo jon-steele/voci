@@ -3,7 +3,7 @@
 // Acquiring parameters to speak from php
 let read = document.getElementById("read").textContent;
 let rate = document.getElementById("rate").textContent;
-let voice_style = document.getElementById("voice").textContent;
+let voice_style = document.getElementById("voice_style").textContent;
 
 // Buffer
 setTimeout(() => {
