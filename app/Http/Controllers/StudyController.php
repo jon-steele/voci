@@ -20,8 +20,6 @@ class StudyController extends Controller
             return abort(403);
         }
 
-        session(['voice' => "false"]);
-
         return view('study.prepare')->with('deck', $deck);
     }
 
@@ -41,10 +39,9 @@ class StudyController extends Controller
             session(['voice_style' => $request->input('voice_style')]);
 
         // Determining whether the user wants voice mode or not.
+        session(['voice' => "true"]);
         if ($request->input('mode') == "off"){
             session(['voice' => "false"]);
-        } else {
-            session(['voice' => "true"]);
         }
 
         // Obtaining the array of cards to study
