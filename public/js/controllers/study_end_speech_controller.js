@@ -26,7 +26,6 @@ if ('webkitSpeechRecognition' in window) {
 
         if (final_transcript.includes("reshuffle")){
             let deck_uuid = document.getElementById("deck_uuid").textContent;
-            console.log('reshuffle');
             
             // Get the root URL
             var rootUrl = window.location.origin;
@@ -37,7 +36,6 @@ if ('webkitSpeechRecognition' in window) {
         }
         else if (final_transcript.includes("again")){
             let deck_uuid = document.getElementById("deck_uuid").textContent;
-            console.log('again');
 
             // Get the root URL
             var rootUrl = window.location.origin;
@@ -45,8 +43,8 @@ if ('webkitSpeechRecognition' in window) {
             // Navigate to the root directory
             window.location.href = rootUrl + '/study/initialize/' + deck_uuid;
         }
-        else if (final_transcript.includes("decks")){
-            console.log('decks');
+        else if (final_transcript.includes("decks") ||
+            final_transcript.includes("exit")){
 
             // Get the root URL
             var rootUrl = window.location.origin;

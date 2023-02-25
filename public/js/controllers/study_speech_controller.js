@@ -47,7 +47,8 @@ if ('webkitSpeechRecognition' in window) {
         }
         else if (final_transcript.includes("end") ||
                 final_transcript.includes("decks") || 
-                final_transcript.includes("home"))
+                final_transcript.includes("home") ||
+                final_transcript.includes("exit"))
             {
 
             // Find the root URL

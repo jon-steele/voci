@@ -8,7 +8,7 @@
             let voices = [];
             const voicesDropdown = document.querySelector('[name="voice"]');
             voices = speechSynthesis.getVoices();
-            voices_dropdown.innerHTML = voices.map(voice => `<option value="${voice.name}">${voice.name} (${voice.lang})</option>`).join('');
+            voices_dropdown.innerHTML = voices.filter(voice => voice.lang.includes('en')).map(voice => `<option value="${voice.name}">${voice.name} (${voice.lang})</option>`).join('');
         }, 50);
 
     </script>
@@ -40,7 +40,7 @@
 
         {{-- Speed Selection --}}
         <label>Voice Speed</label>
-        <input type="range" min="0.7" max="1.3" step="0.01" value="1.0" id="rate" name="rate" class="w-full h-2 bg-gray-400 rounded-lg appearance-none cursor-pointer mb-12 slider">
+        <input type="range" min="0.5" max="1.3" step="0.001" value="0.8" id="rate" name="rate" class="w-full h-2 bg-gray-400 rounded-lg appearance-none cursor-pointer mb-12 slider">
 
         {{-- Voice Selection --}}
         <label>Select Voice</label>
